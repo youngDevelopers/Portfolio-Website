@@ -1,13 +1,13 @@
 import './sidebar.scss';
 import React from 'react'
 import Subtitle from '../../assets/images/myLogo.PNG';
-import Logo from '../../assets/images/logo-s.png';
+import Logo from '../../assets/images/manu.PNG';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLinkedin,
   faGithub,
-  faYoutube,
+  faInstagram,
   faSkype,
 } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -22,7 +22,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 function SideBar() {
 
-    const [showNav, setShowNav] = useState(true);
+    const [showNav, setShowNav] = useState(false);
 
     return (
         <div className="nav-bar">
@@ -31,16 +31,17 @@ function SideBar() {
             to="/"
             onClick={() => setShowNav(false)}>
             <img src={Logo} alt="Logo" />
-            <img className="sub-logo" src={Subtitle} alt="slobodan" />
+            <img className="sub-title" src={Subtitle} alt="slobodan" />
         </Link>
 
-        <nav className={showNav ? 'mobile-show' : ''}>
+        <nav className={showNav ? 'mobile-view' : ''}>
             <NavLink 
             exact="true"
             to="/"
             onClick={() => setShowNav(false)}>
             <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
             </NavLink>
+            
             <NavLink 
             activeclassname="active"
             className="about-link"
@@ -48,6 +49,7 @@ function SideBar() {
             onClick={() => setShowNav(false)}>
             <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
             </NavLink>
+
             <NavLink
             activeclassname="active"
             className="portfolio-link"
@@ -56,6 +58,7 @@ function SideBar() {
             >
             <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
             </NavLink>
+
             <NavLink
             activeclassname="active"
             className="contact-link"
@@ -64,6 +67,7 @@ function SideBar() {
             >
             <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
             </NavLink>
+            
             <FontAwesomeIcon 
             onClick={() => setShowNav(false)}
             icon={faClose}
@@ -86,9 +90,10 @@ function SideBar() {
                 />
             </a>
             </li>
+
             <li>
             <a
-                href="https://github.com/bobangajicsm"
+                href="https://github.com/youngDevelopers"
                 target="_blank"
                 rel="noreferrer"
             >
@@ -99,6 +104,7 @@ function SideBar() {
                 />
             </a>
             </li>
+
             <li>
             <a
                 href="https://www.youtube.com/channel/UCBu5ulO4d-d47lAVybpRTkw"
@@ -106,7 +112,7 @@ function SideBar() {
                 target="_blank"
             >
                 <FontAwesomeIcon
-                icon={faYoutube}
+                icon={faInstagram}
                 color="#4d4d4e"
                 className="anchor-icon"
                 />
