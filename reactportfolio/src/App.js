@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<Layout />} >
           <Route index element={ <Home /> } />
           <Route exact path="/about" element={ <About /> } />
+          <Route exact path="/contact" element={ <Contact /> } />
         </Route>
       </Routes>
     </BrowserRouter>
